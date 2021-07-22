@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.img-container {
+    background: rgba(0, 0, 0, 0.6) url(/images/lunchtable.jpg);
+    background-position: center;
+    background-blend-mode: darken;
+    height: 50vh;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    position: relative;
+    top: 1rem;
+    
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+    color:white;
+}
+
+.navbar .brand-title a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-links ul {
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li a:hover {
+    color: #888888;
+}
+
+.btn {
+    background-color: grey;
+    padding : 0 1rem;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: white;
+    transition: .7s;
+}
+
+
+.sbtn {
+    background-color: grey;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+}
+
+.form-inline a {
+    text-decoration: none;
+    color: white;
+
+}
+
+.sbtn:hover {
+    background-color:#888888;
+}
+
+
+.btn:hover {
+    background-color: white;
+    color: grey;
+}
+
+.herotext h2, .herotext h1 {
+    color: white;
+}
+
+.herotext h2 {
+    font-size: 1rem;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height : 3px;
+    width : 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.herotext {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    margin-top: 5rem;
+}
+
+.from-wrapper {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+}
+
+form {
+    margin-top: 8rem;
+    padding: 1rem;
+    background-color: white;
+}
+
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center; 
+}
+
+.form-inline .inlinestyle {
+    vertical-align: middle;
+    margin: 5px 10px 5px 0;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 20%;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;  
+}
+
+input:focus, select:focus {
+    outline: none;
+}
+
+.from-wrapper {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 20px;
+}
+
+/* horizontal card */
+
+.card-heading {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-style: italic;
+}
+
+.card-heading h2 {
+    font-size: 2rem;
+    margin-top: .5rem;
+}
+
+.card-heading h3 {
+    font-size: 1rem;
+}
+
+.card-container {
+    margin-top: 2rem;
+    background-color:#c8c8c8;
+    display: flex;
+}
+
+.card-txt {
+    padding: 1rem;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.star-rating {
+    align-self: flex-end;
+}
+
+.reviewedby {
+    align-self : flex-start;
+}
+
+.restReview {
+    margin-top: 1.5rem;
+}
+
+
+
+
+
+
+@media (min-width: 1200px) {
+    .main-container, .sub-container, .testbox {
+        width: 80%;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+
+    .sub-container {
+        margin-top: 2rem;
+    }
+
+}
+
+@media (min-width: 600px) and (max-width: 1200px) {
+    .navbar {
+        width: 80%
+    }
+}
+
+@media (max-width: 600px) {
+    .toggle-button {
+        display: flex;
+    }
+    
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction : column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-links ul a:hover {
+        color: #e8e8e8;
+        background-color: #696969;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active{
+        display: flex;
+    }
+
+    .card-container {
+        flex-direction: column;
+    }
+}
+
+.footer {
+    margin-top: 2rem;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3rem;
+    background-color: gray;
+    color: white;
+    text-align: center;
+ }
