@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant reviewed - Login</title>
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+<div>
+
+  <!-- Header section containing title -->
+  <header>
+    <div>
+      <div>
+        <h1>Restaurant reviewed login</h1>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div >
+
+      <!-- Container for the login section -->
+      <div style="margin:auto">
+        <div>
+          <h2></h2>Email &amp; Password Authentication</h2>
+        </div>
+        <div>
+          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+
+          <input style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <br/><br/>
+          <button id="sign-in" name="signin">Sign In</button>
+          &nbsp;&nbsp;&nbsp;
+          <button id="sign-up" name="signup">Sign Up</button>
+          &nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<!-- Scripts required for authentication-->
+<script src="/__/firebase/8.4.3/firebase-app.js"></script>
+<script src="/__/firebase/8.4.3/firebase-auth.js"></script>
+<script src="/__/firebase/init.js"></script>
+<!-- Scripts required for login page-->
+<script src="login.js"></script>
+</body>
+</html>
