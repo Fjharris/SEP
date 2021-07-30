@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="login.html">Login</a></li>
-                        <li><a href="review form.html" class="btn"><i class="fas fa-plus-circle"></i>      Add Your Review</a></li>
+                        <li><a href="addNewRestaurant.html" class="btn"><i class="fas fa-plus-circle"></i>      Add Restaurant Review</a></li>
                     </ul>
                 </div>
             </nav>
@@ -54,7 +55,8 @@
         <div class="card-container sub-container">
             <img src="images/restaurant1.jpg" alt="restaurant">
             <div class="card-txt">
-                <h1 class="restName">Angies Stopover</h1>
+                <h1 class="restName"> <a href="restaurantPage.html"> Angies Stopover </a> </h1>
+                <h2 class="slant">Staffordshire</h2> <br>
                 <h4>Review date 29/03/2021</h4>
                 <p class="star-rating"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
                 <p class="reviewedBy">Reviewed by : Jane Smith</p>
@@ -74,6 +76,7 @@
             <img src="images/restaurant2.jpg" alt="restaurant">
             <div class="card-txt">
                 <h1 class="restName">Indigo Restaurant</h1>
+                <h2 class="slant">Staffordshire</h2> <br>
                 <h4>Review date 26/09/2020</h4>
                 <p class="star-rating"><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></p>
                 <p class="reviewedBy">Reviewed by : John Smith</p>
@@ -94,5 +97,28 @@
     <div class="footer">
          <p> &copy; 2021 Band Name</p>
     </div>
+=======
+<title id="Title">Restaurant Reviewed</title>
+</head>
+<body>
+<div id="navigation">
+    <h1 id="pagetitle">Restaurant Reviewed</h1>
+</div>
+
+<div id="Restuarantslist">
+<ul id="Restaurants"></ul>
+<a href="NewRestaurant.html">Add a new Restaurant</a>
+
+<p></p>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="/__/firebase/init.js"></script>
+<script src="/__/firebase/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+<script src="index.js"></script>
+
+>>>>>>> 33e27b2d5dce3b227431c797ff1f3f7629f19b50
 </body>
 </html>

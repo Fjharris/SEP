@@ -7,6 +7,16 @@
     font-family: 'Roboto', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}
+
 .img-container {
     background: rgba(0, 0, 0, 0.6) url(/images/lunchtable.jpg);
     background-position: center;
@@ -155,10 +165,32 @@ input:focus, select:focus {
     outline: none;
 }
 
+
 .from-wrapper {
     padding: 2rem;
     background-color: white;
     border-radius: 20px;
+}
+
+.large {
+    font-size: 3rem;
+    font-style: italic;
+}
+
+.medium {
+    font-size: 1.5rem;
+}
+
+.topSpacing {
+    margin-top: 2rem;
+}
+
+.bright{
+    color: lightcyan;
+}
+
+.slant{
+    font-style: italic;
 }
 
 /* horizontal card */
