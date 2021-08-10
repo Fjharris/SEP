@@ -30,46 +30,33 @@
     </div>
     </div>
   <div class="testbox">
-    <form action="/">
+    <form onsubmit="return false">
     
       <h4>Name</h4>
       <div class="name">
-        <input type="text" name="name" placeholder="First" />
-        <input type="text" name="name" placeholder="Last" />
+        <input type="text" name="name" id="fname" placeholder="First" />
+        <input type="text" name="name" id="sname" placeholder="Last" />
       </div>
-      <h4>Email</h4>
-      <input type="email" name="Email" />
       <h4>Restaurant Name</h4>
-        <input type="text" name="restaurant_name" placeholder="Name of the Restaurant" />
+        <input type="text" name="restaurant_name" id="restuarant_name" placeholder="Name of the Restaurant" />
       <h4>Location You Visited<span>*</span></h4>
-      <input type="text" name="restaurant_location" placeholder="Restaurant Town/City" />
+      <input type="text" name="restaurant_location" id="restaurant_location" placeholder="Restaurant Town/City" />
       <h4>Day Visited<span>*</span></h4>
       <div class="day-visited">
-        <input type="date" name="dayvisited" required/>
+        <input type="date" name="dayvisited" id="day_visited" required/>
         <i class="fas fa-calendar-alt"></i>
       </div>
       <h4>Time Visited<span>*</span></h4>
   <div class="time-visited">
-        <input type="time" name="timevisited" required/>
+        <input type="time" name="timevisited" id="time_visited" required/>
         <i class="fas fa-clock"></i>
       </div>
       <h4>Dine In / Take Out</h4>
       <div class="question-answer">
-        <label><input type="radio" value="none" name="Dine" /> Dine In</label>
-        <label><input type="radio" value="none" name="Dine" /> Take Out</label>
+        <label><input type="radio" value="none" name="Dine" id="dine_in"/> Dine In</label>
+        <label><input type="radio" value="none" name="Dine" id="take_out" /> Take Out</label>
       </div>
-      <h4>Age<span>*</span></h4>
-      <select>
-        <option class="disabled" value="location" disabled selected>*Please Select*</option>
-        <option value="under 13">Under 13</option>
-        <option value="13-17">13-17</option>
-        <option value="18-24">18-24</option>
-        <option value="25-34">25-34</option>
-        <option value="35-44">35-44</option>
-        <option value="45-54">45-54</option>
-        <option value="55 or older">55 or older</option>
-      </select>
-      <h4>Untitled</h4>
+      <h4>Rating</h4>
       <table>
         <tr>
           <th class="first-col"></th>
@@ -80,52 +67,56 @@
         </tr>
         <tr>
           <td class="first-col">Food Quality</td>
-          <td><input type="radio" value="none" name="Food" /></td>
-          <td><input type="radio" value="none" name="Food" /></td>
-          <td><input type="radio" value="none" name="Food" /></td>
-          <td><input type="radio" value="none" name="Food" /></td>
+          <td><input type="radio" value=4 name="Food" /></td>
+          <td><input type="radio" value=3 name="Food" /></td>
+          <td><input type="radio" value=2 name="Food" /></td>
+          <td><input type="radio" value=1 name="Food" /></td>
         </tr>
         <tr>
-          <td class="first-col">Overall Service Quality</td>
-          <td><input type="radio" value="none" name="Service" /></td>
-          <td><input type="radio" value="none" name="Service" /></td>
-          <td><input type="radio" value="none" name="Service" /></td>
-          <td><input type="radio" value="none" name="Service" /></td>
+          <td class="first-col">Service Quality</td>
+          <td><input type="radio" value=4 name="Service" /></td>
+          <td><input type="radio" value=3 name="Service" /></td>
+          <td><input type="radio" value=2 name="Service" /></td>
+          <td><input type="radio" value=1 name="Service" /></td>
         </tr>
         <tr>
-          <td class="first-col">Speed of Service</td>
-          <td><input type="radio" value="none" name="Speed" /></td>
-          <td><input type="radio" value="none" name="Speed" /></td>
-          <td><input type="radio" value="none" name="Speed" /></td>
-          <td><input type="radio" value="none" name="Speed" /></td>
+          <td class="first-col">Atmosphere</td>
+          <td><input type="radio" value="4" name="atmosphere" /></td>
+          <td><input type="radio" value="3" name="atmosphere" /></td>
+          <td><input type="radio" value="2" name="atmosphere" /></td>
+          <td><input type="radio" value="1" name="atmosphere" /></td>
         </tr>
         <tr>
           <td class="first-col">Price</td>
-          <td><input type="radio" value="none" name="Price" /></td>
-          <td><input type="radio" value="none" name="Price" /></td>
-          <td><input type="radio" value="none" name="Price" /></td>
-          <td><input type="radio" value="none" name="Price" /></td>
-        </tr>
-        <tr>
-          <td class="first-col">Overall Experience</td>
-          <td><input type="radio" value="none" name="Experience" /></td>
-          <td><input type="radio" value="none" name="Experience" /></td>
-          <td><input type="radio" value="none" name="Experience" /></td>
-          <td><input type="radio" value="none" name="Experience" /></td>
+          <td><input type="radio" value=4 name="Price" /></td>
+          <td><input type="radio" value=3 name="Price" /></td>
+          <td><input type="radio" value=2 name="Price" /></td>
+          <td><input type="radio" value=1 name="Price" /></td>
         </tr>
       </table>
       <h4>Any comments, questions or suggestions?</h4>
-      <textarea rows="5"></textarea>
+      <textarea id="review" rows="5"></textarea>
       <div class="btn-block">
-        <button type="submit" href="/">Send Review</button>
+        <button onclick="AddRestaurant()" href="/">Send Review</button>
       </div>
     </form>
   </div>
   <div class="footer">
-    <p> &copy; 2021 Band Name</p>
+    <p> &copy; 2021 Harrison,Sanchez, Tiramdasu</p>
   </div>
 
     
+
+  
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+  <script src="/__/firebase/init.js"></script>
+  <script src="/__/firebase/8.4.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+  <script src="js/Restaurant.js"></script>
+
+  <script src="js/NewRestaurant.js"></script>
+  
   </body>
 </html>
 
