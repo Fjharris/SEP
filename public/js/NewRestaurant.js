@@ -60,10 +60,8 @@ function AddRestaurant(){
       atmosphere : atmosphererating,
       overal : overalrating
     })
-    console.log(docref.id + ' created');
       
       revref = db.collection("restaurants").doc(docref.id).collection('review').doc()
-      console.log(revref.id + ' being created');
 
       revref.set({
         author : authname,
