@@ -20,9 +20,11 @@ function addStars(element,times)
 //This is the function that gets all the reviews from the database and displays them this is the default function that lists all of the different restaurants
 function renderReviews()
 {
+    //get a full list of restaurants
 const db = firebase.firestore()
 db.collection("restaurants").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
+
         let linebreak = document.createElement('br');
 
         let divcontainer= document.createElement('div');
@@ -40,14 +42,26 @@ db.collection("restaurants").get().then((querySnapshot) => {
         let rlocation = document.createElement('h2');
         rlocation.className="slant";
         rlocation.innerText = doc.data().location;
-        let reviewdate = document.createElement('h4');
-        //reviewdate to be added
+        let reviewdate = document.createElement('h4');      
         let overall = document.createElement('p');
         overall.className = "star-rating"
+        overall.innerHTML = "Overall Rating "
         addStars(overall,doc.data().overal);
-        //lastest review information to be added
         let rattingscontainer = document.createElement('div');
         rattingscontainer.className = "ratings";
+        let review = document.createElement("p");
+        review.className = "restReview";
+
+        //get the latest review for the selected restaurant - This is inefficient and would need to be fixed for a full release
+        let query = db.collection("restaurants").doc(doc.id).collection("review").orderBy("date", "desc").limit(1);
+        query.get().then(querySnapshot => {
+            querySnapshot.forEach(documentSnapshot => {
+              
+        reviewdate.innerHTML = "Reviewed on " + documentSnapshot.data().date.toDate().toDateString();
+        review.innerHTML = documentSnapshot.data().review;
+        });
+    });
+    
 
         let food = document.createElement('p');
         food.innerHTML = "<i class='fas fa-hotdog'></i> &nbsp; Food ";
@@ -59,8 +73,9 @@ db.collection("restaurants").get().then((querySnapshot) => {
         value.innerHTML = "<i class='fas fa-pound-sign'></i> &nbsp; Value ";
         addStars(value,doc.data().value);
         let atmosphere = document.createElement('p');
-        food.innerHTML = "<i class='fas fa-cloud-sun'></i> &nbsp; Atmosphere ";
+        atmosphere.innerHTML = "<i class='fas fa-cloud-sun'></i> &nbsp; Atmosphere ";
         addStars(atmosphere,doc.data().atmosphere);
+
 
         rname.appendChild(link);
         divcontainer.appendChild(img);
@@ -74,20 +89,14 @@ db.collection("restaurants").get().then((querySnapshot) => {
         rattingscontainer.appendChild(value);
         rattingscontainer.appendChild(atmosphere);
         crdtext.appendChild(rattingscontainer);
+        crdtext.appendChild(review);
         divcontainer.appendChild(crdtext)
 
+        
+        document.getElementById("startofreviews").append(divcontainer);
 
 
 
-
-//        let title= document.createElement('span');
-//        let rating = document.createElement('span');
-
-//        li.setAttribute('data-id',doc.id)
-//      title.textContent = doc.data().name;
-//        rating.textContent = doc.data().rating;
-
-        document.getElementById("startofreviews").append(divcontainer)
 
 
     });
