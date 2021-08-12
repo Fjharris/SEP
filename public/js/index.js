@@ -51,14 +51,20 @@ db.collection("restaurants").get().then((querySnapshot) => {
         rattingscontainer.className = "ratings";
         let review = document.createElement("p");
         review.className = "restReview";
+        let author = document.createElement("p");
+        author.className = "reviewedBy";
+        let datereviewed = document.createElement("p");
+
 
         //get the latest review for the selected restaurant - This is inefficient and would need to be fixed for a full release
         let query = db.collection("restaurants").doc(doc.id).collection("review").orderBy("date", "desc").limit(1);
         query.get().then(querySnapshot => {
             querySnapshot.forEach(documentSnapshot => {
               
-        reviewdate.innerHTML = "Reviewed on " + documentSnapshot.data().date.toDate().toDateString();
+        reviewdate.innerHTML = "Last reviewed on " + documentSnapshot.data().date.toDate().toDateString();
         review.innerHTML = documentSnapshot.data().review;
+        author.innerHTML = "Reviewed by: " + documentSnapshot.data().author;
+        datereviewed.innerHTML = "Visited on: " + documentSnapshot.data().dayvisited;
         });
     });
     
@@ -84,6 +90,8 @@ db.collection("restaurants").get().then((querySnapshot) => {
         crdtext.appendChild(linebreak);
         crdtext.appendChild(reviewdate);
         crdtext.appendChild(overall);
+        crdtext.appendChild(author);
+        crdtext.appendChild(datereviewed);
         rattingscontainer.appendChild(food);
         rattingscontainer.appendChild(service);
         rattingscontainer.appendChild(value);
