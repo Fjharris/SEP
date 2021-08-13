@@ -13,6 +13,7 @@ function addStars(element,times)
 }
 
 document.addEventListener('DOMContentLoaded', (event) => {
+    
 const urlParams = new URLSearchParams(window.location.search);
 const restaurantID = urlParams.get('restaurantid');
 document.getElementById("addreviewlink").href = "review form.html?restaurantid=" +restaurantID;
