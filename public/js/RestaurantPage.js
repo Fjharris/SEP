@@ -15,6 +15,7 @@ function addStars(element,times)
 document.addEventListener('DOMContentLoaded', (event) => {
 const urlParams = new URLSearchParams(window.location.search);
 const restaurantID = urlParams.get('restaurantid');
+document.getElementById("addreviewlink").href = "review form.html?restaurantid=" +restaurantID;
 const db = firebase.firestore()
 
 
@@ -105,7 +106,6 @@ docRef.get().then((doc) => {
     console.log("Error getting document:", error);
 });
 
-console.log(myParam);
 });
 
 
